@@ -1,13 +1,54 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@600&display=swap");
+.wrapper {
+  margin: 0 auto;
+  width: 700px;
+  padding: 2rem;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form-title {
+  text-align: center;
+  font-family: "Genos", sans-serif;
+  font-size: 25px;
+}
+.todo-title {
+  text-align: center;
+  font-family: "Genos", sans-serif;
+  font-size: 30px;
+}
+.todo-span {
+  font-family: "Oxanium", cursive;
+}
+.todo-form {
+  margin-bottom: 1rem;
+}
+#todo-input {
+  width: 300px;
+  height: 25px;
+}
+.todo-add {
+  margin-left: 2rem;
+  width: 150px;
+  height: 25px;
+  font-family: "Oxanium", cursive;
+}
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.todo-item {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid teal;
+}
+.todo-input {
+  margin-right: 1rem;
+}
+.todo-remove {
+  border: none;
+  background-color: darkslategray;
+  color: #fff;
 }
