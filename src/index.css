@@ -15,21 +15,34 @@
   font-family: "Genos", sans-serif;
   font-size: 30px;
 }
+.todo-head {
+  text-align: center;
+  font-family: "Genos", sans-serif;
+  font-size: 25px;
+  margin: 0;
+  margin-bottom: 10px;
+}
 .todo-span {
   font-family: "Oxanium", cursive;
 }
 .todo-form {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
 }
 #todo-input {
-  width: 300px;
-  height: 25px;
+  width: 400px;
+  height: 32px;
 }
 .todo-add {
   margin-left: 2rem;
-  width: 150px;
-  height: 25px;
+  width: 280px;
+  margin: 0;
   font-family: "Oxanium", cursive;
+  padding: 0.5rem 1rem 0.5rem;
+  border: 1px solid teal;
+  cursor: pointer;
+  text-transform: capitalize;
 }
 .todo-list {
   list-style: none;
@@ -46,9 +59,58 @@
 }
 .todo-input {
   margin-right: 1rem;
+  margin-bottom: 0;
 }
 .todo-remove {
   border: none;
   background-color: darkslategray;
   color: #fff;
+  cursor: pointer;
+}
+.todo-filter {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex: 1 1 49%;
+  margin-left: 0.8rem;
+}
+.todo-btn {
+  padding: 0.5rem 1rem 0.5rem;
+  border: 1px solid teal;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-family: "Oxanium", cursive;
+}
+button {
+  border: none;
+  margin: 0.5rem 20px;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+.todo-btn .toggle-btn {
+  border-width: 1px;
+  border-color: #d3d3d3;
+}
+.todo-btn .toggle-btn[aria-pressed="true"] {
+  text-decoration: underline;
+  border-color: #4d4d4d;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
