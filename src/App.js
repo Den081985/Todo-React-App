@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { nanoid } from "nanoid";
 import FilterButton from "./Components/FilterButton";
 import Form from "./Components/Form";
 import Todo from "./Components/Todo";
+import { usePrevious } from "./Components/Todo";
 //объект с указанием поведения элементов фильтра
 const FILTER_MAP = {
   All: () => true,
@@ -77,13 +78,26 @@ function App(props) {
   }
   const taskNoun = taskList.length !== 1 ? "tasks" : "task";
   const taskHead = `${taskList.length} ${taskNoun} remaining`;
+  //переменая для ссылки на заголовок списка
+  const listHeadingRef = useRef(null);
+  //tabIndex="-1" значит, что сфокусироваться на элементе можно тольео с помощью JS
+  //отслеживание длины состояния задач
+  const prevTasksLength = usePrevious(tasks.length);
+  //фокусировка на заголовке при удалении элемента из списка
+  useEffect(() => {
+    if (tasks.length - prevTasksLength === -1) {
+      listHeadingRef.current.focus();
+    }
+  }, [tasks.length, prevTasksLength]);
   return (
     <div className="wrapper">
       <h2 className="todo-title">Todo List</h2>
       <h3 className="form-title">What needs to be done?</h3>
       <Form addTask={addTask} />
       <div className="todo-filter">{filterList}</div>
-      <h3 className="todo-head">{taskHead}</h3>
+      <h3 className="todo-head" tabIndex="-1" ref={listHeadingRef}>
+        {taskHead}
+      </h3>
       <ul className="todo-list">{taskList}</ul>
     </div>
   );
