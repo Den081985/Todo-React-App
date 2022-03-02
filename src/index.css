@@ -3,7 +3,7 @@
 .wrapper {
   margin: 0 auto;
   width: 700px;
-  padding: 2rem;
+  padding: 1rem;
 }
 .form-title {
   text-align: center;
@@ -21,6 +21,9 @@
   font-size: 25px;
   margin: 0;
   margin-bottom: 10px;
+}
+.todo-head:focus {
+  color: teal;
 }
 .todo-span {
   font-family: "Oxanium", cursive;
@@ -52,16 +55,28 @@
 .todo-item {
   margin-bottom: 2rem;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   border: 1px solid teal;
+  position: relative;
+}
+.edit-btn {
+  position: absolute;
+  top: 12px;
+  right: 50px;
+  cursor: pointer;
+  font-family: "Oxanium", cursive;
+}
+.edit-btn:focus {
+  color: teal;
 }
 .todo-input {
   margin-right: 1rem;
   margin-bottom: 0;
 }
 .todo-remove {
+  position: absolute;
+  right: 10px;
+  top: 12px;
   border: none;
   background-color: darkslategray;
   color: #fff;
@@ -96,6 +111,7 @@ button {
   -moz-osx-font-smoothing: inherit;
   -webkit-appearance: none;
 }
+
 .todo-btn .toggle-btn {
   border-width: 1px;
   border-color: #d3d3d3;
@@ -113,4 +129,33 @@ button {
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
+}
+.todo-text {
+  margin-left: 20px;
+}
+
+.todo-label {
+  /* margin-left: 10px; */
+  font-family: "Oxanium", cursive;
+}
+.form-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-top: 30px; */
+}
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+}
+.todo-cancel,
+.todo-edit {
+  font-family: "Oxanium", cursive;
+  cursor: pointer;
+}
+
+.stack-small {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
