@@ -6,6 +6,9 @@
 .pnp.js
 /package.json
 /package-lock.json
+.firebaserc
+firebase.json
+/.firebase
 
 # testing
 /coverage
